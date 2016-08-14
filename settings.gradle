@@ -1,1 +1,1 @@
-include ':app', ':KenBurnsView'
+include ':app'
