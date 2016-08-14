@@ -1,0 +1,13 @@
+<resources>
+    <string name="fontello_logo">&#xe8fe;</string>
+    <string name="material_icon_go_right">&#xe876;</string>
+    <string name="material_icon_point_empty">&#xe868;</string>
+    <string name="material_icon_point_full">&#xe869;</string>
+    <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="material_icon_cloud_univ_first">&#xeb74;</string>
+    <string name="material_icon_cloud_univ_second">&#xf200;</string>
+    <string name="material_icon_cloud_univ_third">&#xeb76;</string>
+    <string name="money_manager">Money Manager</string>
+    <string name="app_name">PFM_UI</string>
+    <string name="action_settings">Settings</string>
+</resources>
