@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings1) {
             Log.d("ACTION", "WIZARD");
-            Intent intent = new Intent(this, WizardUniversalActivity.class);
+            Intent intent = new Intent(this, WizardActivity.class);
             startActivity(intent);
             return true;
         }

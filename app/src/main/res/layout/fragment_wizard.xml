@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:id="@+id/fragment_wizard_universal_layout"
+    android:id="@+id/fragment_wizard_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -23,7 +23,7 @@
             android:orientation="vertical" >
 
             <com.example.souvik.pfmUi.font.MaterialDesignIconsTextView
-                android:id="@+id/fragment_wizard_universal_icon"
+                android:id="@+id/fragment_wizard_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="0dp"
@@ -35,7 +35,7 @@
                 android:textSize="130sp" />
 
             <com.example.souvik.pfmUi.font.RobotoTextView
-                android:id="@+id/fragment_wizard_universal_title"
+                android:id="@+id/fragment_wizard_title"
                 android:paddingTop="50dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                 app:typeface="robotoLight" />
 
             <com.example.souvik.pfmUi.font.RobotoTextView
-                android:id="@+id/fragment_wizard_universal_text"
+                android:id="@+id/fragment_wizard_text"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

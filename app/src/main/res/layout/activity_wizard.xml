@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--xmlns:app="http://schemas.android.com/apk/res/com.example.souvik.pfmUi"-->
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/activity_wizard_universal_pager"
+        android:id="@+id/activity_wizard_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:context=".TabMediaActivity" >
+        android:layout_weight="1">
     </android.support.v4.view.ViewPager>
 
     <LinearLayout
@@ -35,7 +32,7 @@
             android:background="@android:color/transparent" >
 
             <com.example.souvik.pfmUi.font.RobotoTextView
-                android:id="@+id/activity_wizard_universal_previous"
+                android:id="@+id/activity_wizard_previous"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -51,7 +48,7 @@
                 app:typeface="robotoMedium" />
 
             <com.example.souvik.pfmUi.font.MaterialDesignIconsTextView
-                android:id="@+id/activity_wizard_universal_possition"
+                android:id="@+id/activity_wizard_possition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -66,7 +63,7 @@
                 android:textSize="6sp" />
 
             <com.example.souvik.pfmUi.font.MaterialDesignIconsTextView
-                android:id="@+id/activity_wizard_universal_next"
+                android:id="@+id/activity_wizard_next"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="0dp"

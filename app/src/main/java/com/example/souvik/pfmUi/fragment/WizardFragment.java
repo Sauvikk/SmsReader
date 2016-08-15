@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.souvik.pfmUi.R;
 
 
-public class WizardUniversalFragment extends Fragment {
+public class WizardFragment extends Fragment {
 
 	private static final String ARG_POSITION = "position";
 
@@ -20,8 +20,8 @@ public class WizardUniversalFragment extends Fragment {
 	private LinearLayout layout;
 	private TextView icon;
 
-	public static WizardUniversalFragment newInstance(int position) {
-		WizardUniversalFragment f = new WizardUniversalFragment();
+	public static WizardFragment newInstance(int position) {
+		WizardFragment f = new WizardFragment();
 		Bundle b = new Bundle();
 		b.putInt(ARG_POSITION, position);
 		f.setArguments(b);
@@ -37,32 +37,23 @@ public class WizardUniversalFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_wizard_universal,
-				container, false);
-		layout = (LinearLayout) rootView
-				.findViewById(R.id.fragment_wizard_universal_layout);
-		icon = (TextView) rootView
-				.findViewById(R.id.fragment_wizard_universal_icon);
-
+		View rootView = inflater.inflate(R.layout.fragment_wizard, container, false);
+		layout = (LinearLayout) rootView.findViewById(R.id.fragment_wizard_layout);
+		icon = (TextView) rootView.findViewById(R.id.fragment_wizard_icon);
 		if (position == 0) {
-			layout.setBackgroundColor(getResources().getColor(
-					R.color.material_purple_300));
+			layout.setBackgroundColor(getResources().getColor(R.color.material_purple_300));
 			layout.invalidate();
 			icon.setText(R.string.material_icon_cloud_univ_first);
 		} else if (position == 1) {
-			layout.setBackgroundColor(getResources().getColor(
-					R.color.material_purple_700));
+			layout.setBackgroundColor(getResources().getColor(R.color.material_purple_700));
 			layout.invalidate();
 			icon.setText(R.string.material_icon_cloud_univ_second);
 		} else {
-			layout.setBackgroundColor(getResources().getColor(
-					R.color.material_purple_900));
+			layout.setBackgroundColor(getResources().getColor(R.color.material_purple_900));
 			layout.invalidate();
 			icon.setText(R.string.material_icon_cloud_univ_third);
 		}
-
 		ViewCompat.setElevation(rootView, 50);
 		return rootView;
 	}
-
 }

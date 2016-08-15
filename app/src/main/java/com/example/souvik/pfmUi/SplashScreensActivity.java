@@ -57,7 +57,7 @@ public class SplashScreensActivity extends Activity {
             @Override
             public void run() {
                 Log.d("IN RUN", "IN RUN");
-                Intent i = new Intent(SplashScreensActivity.this, WizardUniversalActivity.class);
+                Intent i = new Intent(SplashScreensActivity.this, WizardActivity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();

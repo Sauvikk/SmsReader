@@ -23,7 +23,7 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
          </activity>
-        <activity android:name=".WizardUniversalActivity" />
+        <activity android:name=".WizardActivity" />
 
     </application>
 

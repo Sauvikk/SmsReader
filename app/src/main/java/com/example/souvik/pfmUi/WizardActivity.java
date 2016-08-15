@@ -15,10 +15,10 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.souvik.pfmUi.fragment.WizardUniversalFragment;
+import com.example.souvik.pfmUi.fragment.WizardFragment;
 
 
-public class WizardUniversalActivity extends AppCompatActivity {
+public class WizardActivity extends AppCompatActivity {
 
     private MyPagerAdapter adapter;
     private ViewPager pager;
@@ -31,16 +31,16 @@ public class WizardUniversalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_wizard_universal);
+        setContentView(R.layout.activity_wizard);
         if(getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
         currentItem = 0;
 
-        pager = (ViewPager) findViewById(R.id.activity_wizard_universal_pager);
-        previousButton = (TextView) findViewById(R.id.activity_wizard_universal_previous);
-        nextButton = (TextView) findViewById(R.id.activity_wizard_universal_next);
-        navigator = (TextView) findViewById(R.id.activity_wizard_universal_possition);
+        pager = (ViewPager) findViewById(R.id.activity_wizard_pager);
+        previousButton = (TextView) findViewById(R.id.activity_wizard_previous);
+        nextButton = (TextView) findViewById(R.id.activity_wizard_next);
+        navigator = (TextView) findViewById(R.id.activity_wizard_possition);
 
         adapter = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
@@ -78,7 +78,7 @@ public class WizardUniversalActivity extends AppCompatActivity {
 					pager.setCurrentItem(pager.getCurrentItem() - 1);
 				}
 				setNavigator();*/
-                Toast.makeText(WizardUniversalActivity.this, "Skip",
+                Toast.makeText(WizardActivity.this, "Skip",
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -91,9 +91,9 @@ public class WizardUniversalActivity extends AppCompatActivity {
                 if (pager.getCurrentItem() != (pager.getAdapter().getCount() - 1)) {
                     pager.setCurrentItem(pager.getCurrentItem() + 1);
                 } else {
-//                    Toast.makeText(WizardUniversalActivity.this, "Finish",
+//                    Toast.makeText(WizardActivity.this, "Finish",
 //                            Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(WizardUniversalActivity.this, MainActivity.class);
+                    Intent i = new Intent(WizardActivity.this, MainActivity.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                     finish();
@@ -161,11 +161,11 @@ public class WizardUniversalActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return WizardUniversalFragment.newInstance(position);
+                return WizardFragment.newInstance(position);
             } else if (position == 1) {
-                return WizardUniversalFragment.newInstance(position);
+                return WizardFragment.newInstance(position);
             } else {
-                return WizardUniversalFragment.newInstance(position);
+                return WizardFragment.newInstance(position);
             }
         }
     }
