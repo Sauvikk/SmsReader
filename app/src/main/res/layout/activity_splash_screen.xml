@@ -3,16 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <com.flaviofaria.kenburnsview.KenBurnsView
-        android:id="@+id/ken_burns_images"
+    <ImageView
+        android:id="@+id/splash_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <!-- We use dps for font size: we don't want our logo
-    to become larger if user has set larger text in global
-    settings. -->
 
     <com.example.souvik.pfmUi.font.MaterialDesignIconsTextView
         android:id="@+id/logo"
@@ -22,7 +19,7 @@
         android:alpha="0.0"
         android:text="@string/fontello_logo"
         android:textColor="@android:color/white"
-        android:textSize="64dp"
+        android:textSize="150dp"
         tools:ignore="SpUsage" />
 
     <com.example.souvik.pfmUi.font.RobotoTextView
@@ -35,6 +32,7 @@
         android:layout_marginTop="10dp"
         android:alpha="0.0"
         android:text="@string/money_manager"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        app:typeface="robotoBoldCondensed"/>
 
 </RelativeLayout>

@@ -38,7 +38,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_weight="0"
-                android:background="@drawable/selector_dialog_media"
                 android:gravity="center"
                 android:minWidth="80dp"
                 android:padding="16dp"
@@ -48,7 +47,7 @@
                 app:typeface="robotoMedium" />
 
             <com.example.souvik.pfmUi.font.MaterialDesignIconsTextView
-                android:id="@+id/activity_wizard_possition"
+                android:id="@+id/activity_wizard_position"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

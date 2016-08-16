@@ -1,0 +1,87 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="10dp"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            android:id="@+id/main_balance_layout"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="16.0dip"
+            android:paddingTop="8.0dip"
+            android:paddingRight="16.0dip"
+            android:paddingBottom="8.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="64.0dip">
+
+            <ImageView
+                android:id="@+id/main_balance_card_header_icon"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/coins" />
+
+            <com.example.souvik.pfmUi.font.RobotoTextView
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_toRightOf="@id/main_balance_card_header_icon"
+                android:minHeight="47.0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0dip"
+                android:layout_marginRight="16.0dip"
+                android:text="Total Balance"
+                app:typeface="robotoRegular"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_balance_card_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_balance_layout">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="30dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.souvik.pfmUi.font.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rs. 17,023"
+                    android:textSize="35sp"
+                    app:typeface="robotoCondensedItalic" />
+
+                <com.example.souvik.pfmUi.font.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxxx5536 : Rs. 10,020"
+                    android:textSize="13sp"
+                    app:typeface="robotoRegular" />
+
+                <com.example.souvik.pfmUi.font.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxxx7782 : Rs. 7,003"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    app:typeface="robotoRegular" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

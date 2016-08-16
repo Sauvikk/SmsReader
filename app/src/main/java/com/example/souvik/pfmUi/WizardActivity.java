@@ -22,7 +22,7 @@ public class WizardActivity extends AppCompatActivity {
 
     private MyPagerAdapter adapter;
     private ViewPager pager;
-    private TextView previousButton;
+    private TextView skipButton;
     private TextView nextButton;
     private TextView navigator;
     private int currentItem;
@@ -32,15 +32,12 @@ public class WizardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_wizard);
-        if(getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
         currentItem = 0;
 
         pager = (ViewPager) findViewById(R.id.activity_wizard_pager);
-        previousButton = (TextView) findViewById(R.id.activity_wizard_previous);
+        skipButton = (TextView) findViewById(R.id.activity_wizard_previous);
         nextButton = (TextView) findViewById(R.id.activity_wizard_next);
-        navigator = (TextView) findViewById(R.id.activity_wizard_possition);
+        navigator = (TextView) findViewById(R.id.activity_wizard_position);
 
         adapter = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
@@ -52,34 +49,29 @@ public class WizardActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                // TODO Auto-generated method stub
 
             }
 
             @Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
-                // TODO Auto-generated method stub
 
             }
 
             @Override
             public void onPageScrollStateChanged(int position) {
-                // TODO Auto-generated method stub
                 setNavigator();
             }
         });
 
-        previousButton.setOnClickListener(new OnClickListener() {
+        skipButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-				/*if (pager.getCurrentItem() != 0) {
+                /*if (pager.getCurrentItem() != 0) {
 					pager.setCurrentItem(pager.getCurrentItem() - 1);
 				}
 				setNavigator();*/
-                Toast.makeText(WizardActivity.this, "Skip",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(WizardActivity.this, "Skip", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -87,7 +79,6 @@ public class WizardActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 if (pager.getCurrentItem() != (pager.getAdapter().getCount() - 1)) {
                     pager.setCurrentItem(pager.getCurrentItem() + 1);
                 } else {
@@ -118,19 +109,6 @@ public class WizardActivity extends AppCompatActivity {
         navigator.setText(navigation);
     }
 
-    public void setCurrentSlidePosition(int position) {
-        this.currentItem = position;
-    }
-
-    public int getCurrentSlidePosition() {
-        return this.currentItem;
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

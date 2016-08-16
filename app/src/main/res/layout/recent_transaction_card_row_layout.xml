@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginLeft="8dp"
+    android:background="#ffff"
+    android:layout_marginRight="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:minHeight="55dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <com.example.souvik.pfmUi.font.RobotoTextView
+                android:id="@+id/transaction_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UBER"
+                android:textSize="15sp"
+                app:typeface="robotoBoldCondensed"/>
+
+            <com.example.souvik.pfmUi.font.RobotoTextView
+                android:id="@+id/transaction_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xxx5536 : Rs. 206"
+                android:textSize="12sp"
+                app:typeface="robotoRegular"/>
+
+            <com.example.souvik.pfmUi.font.RobotoTextView
+                android:id="@+id/transaction_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AUG 15"
+        android:textSize="12sp"
+                app:typeface="robotoRegular"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/transaction_image"
+            android:src="@drawable/amazon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="2dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

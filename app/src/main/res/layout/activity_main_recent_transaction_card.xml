@@ -1,0 +1,14 @@
+<it.gmariotti.cardslib.library.view.CardViewNative
+    android:id="@+id/medicine_all_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="10dp"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardPreventCornerOverlap="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"/>
+
+
+

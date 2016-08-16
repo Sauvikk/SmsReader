@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#346933</color>
+    <color name="colorPrimaryDark">#c0392b</color>
+    <color name="textColorPrimary">#FFFFFF</color>
     <color name="psts_background_tab_pressed">#1AFFFFFF</color>
     <color name="psts_background_tab_pressed_ripple">#AAFFFFFF</color>
+    <color name="sgColorWhite">#ffffffff</color>
+    <color name="sgColorSecondaryText">#8a000000</color>
+    <color name="sgColorListPressed">#ffeeeeee</color>
+    <color name="sgColorPrimary">#ff1686c4</color>
+    <color name="sgColorDisabledHintText">#42000000</color>
+    <color name="transparent">#00000000</color>
     
     <color name="white">#ffffff</color>
     <color name="white_15_percent">#26ffffff</color>
