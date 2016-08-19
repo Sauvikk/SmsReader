@@ -1,4 +1,4 @@
-package com.example.souvik.pfmUi;
+package com.example.souvik.pfmUi.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,13 +8,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.souvik.pfmUi.R;
 import com.example.souvik.pfmUi.fragment.WizardFragment;
 
 
@@ -108,6 +108,9 @@ public class WizardActivity extends AppCompatActivity {
         }
         navigator.setText(navigation);
     }
+
+
+
 
 
     @Override

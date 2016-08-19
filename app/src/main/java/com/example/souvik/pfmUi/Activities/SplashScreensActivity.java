@@ -1,4 +1,4 @@
-package com.example.souvik.pfmUi;
+package com.example.souvik.pfmUi.Activities;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.souvik.pfmUi.R;
 import com.example.souvik.pfmUi.font.MaterialDesignIconsTextView;
 
 

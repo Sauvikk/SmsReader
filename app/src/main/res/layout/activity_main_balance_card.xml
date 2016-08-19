@@ -59,6 +59,7 @@
                 android:layout_height="wrap_content">
 
                 <com.example.souvik.pfmUi.font.RobotoTextView
+                    android:id="@+id/activity_main_balance_card_total_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Rs. 17,023"
@@ -68,14 +69,14 @@
                 <com.example.souvik.pfmUi.font.RobotoTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="xxxx5536 : Rs. 10,020"
+                    android:text="xxx5536 : Rs 10,682.50"
                     android:textSize="13sp"
                     app:typeface="robotoRegular" />
 
                 <com.example.souvik.pfmUi.font.RobotoTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="xxxx7782 : Rs. 7,003"
+                    android:text="xxx5537 : Rs 786.53"
                     android:layout_gravity="center"
                     android:textSize="13sp"
                     app:typeface="robotoRegular" />

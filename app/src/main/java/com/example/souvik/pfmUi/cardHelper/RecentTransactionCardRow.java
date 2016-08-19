@@ -8,9 +8,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.souvik.pfmUi.PFM;
 import com.example.souvik.pfmUi.R;
+import com.example.souvik.pfmUi.model.Transaction;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import it.gmariotti.cardslib.library.internal.Card;
@@ -43,51 +47,37 @@ public class RecentTransactionCardRow extends CardWithList {
     @Override
     protected List<ListObject> initChildren() {
 
-        List<ListObject> mObjects = new ArrayList<ListObject>();
+        List<ListObject> row = new ArrayList<ListObject>();
 
-        TransactionObject t1 = new TransactionObject(this);
-        t1.transactionDescription = "Uber";
-        t1.transactionImage = R.drawable.taxi;
-        t1.transactionAmount = "xxxx5536 : Rs. 201.56";
-        t1.transactionDate = "AUG 11";
-        t1.setObjectId(t1.transactionDescription);
+        List<Transaction> transactionList = Transaction.getRecentTransactions(PFM.db);
 
-        TransactionObject t2 = new TransactionObject(this);
-        t2.transactionDescription = "Imax";
-        t2.transactionImage = R.drawable.movie;
-        t2.transactionAmount = "xxxx7786 : Rs. 410.00";
-        t2.transactionDate = "AUG 3";
-        t2.setObjectId(t2.transactionDescription);
+        SimpleDateFormat sf = new SimpleDateFormat("MMM dd");
 
-        TransactionObject t3 = new TransactionObject(this);
-        t3.transactionDescription = "Dominos";
-        t3.transactionImage = R.drawable.food;
-        t3.transactionAmount = "xxxx5536 : Rs. 1106.46";
-        t3.transactionDate = "JUL 27";
-        t3.setObjectId(t3.transactionDescription);
+        for(Transaction t : transactionList){
+            TransactionObject trxn = new TransactionObject(this);
+            String desc = t.getTransactionDescription();
+            trxn.transactionDescription = t.getTransactionDescription();
+            if(desc.contains("FATTOOS") || desc.contains("CAFE")){
+                trxn.transactionImage = R.drawable.food;
+            }else if(desc.contains("UBER")){
+                trxn.transactionImage = R.drawable.taxi;
+            }else{
+                trxn.transactionImage = R.drawable.payment;
+            }
+            if(t.getTransactionType().equals("Debit")) {
+                trxn.transactionAmount = "Debit Rs. " + t.getTransactionAmount();
+            }else{
+                trxn.transactionAmount = "Credit Rs. " + t.getTransactionAmount();
+            }
+            Date date = new Date(Long.parseLong(t.getTransactionDate()));
+            trxn.transactionDate = sf.format(date);
+            trxn.setObjectId(t.getTransactionId()+"");
+            row.add(trxn);
+        }
 
-        TransactionObject t4 = new TransactionObject(this);
-        t4.transactionDescription = "Uber";
-        t4.transactionImage = R.drawable.taxi;
-        t4.transactionAmount = "xxxx5536 : Rs. 193.56";
-        t4.transactionDate = "JUL 16";
-        t4.setObjectId(t4.transactionDescription);
-
-        TransactionObject t5 = new TransactionObject(this);
-        t5.transactionDescription = "Amazon";
-        t5.transactionImage = R.drawable.amazon;
-        t5.transactionAmount = "xxxx7786 : Rs. 2300.55";
-        t5.transactionDate = "JUL 10";
-        t5.setObjectId(t5.transactionDescription);
-
-        mObjects.add(t1);
-        mObjects.add(t2);
-        mObjects.add(t3);
-        mObjects.add(t4);
-        mObjects.add(t5);
-
-        return mObjects;
+        return row;
     }
+
 
 
     @Override
@@ -109,11 +99,6 @@ public class RecentTransactionCardRow extends CardWithList {
         return R.layout.recent_transaction_card_row_layout;
     }
 
-
-    // -------------------------------------------------------------
-    // Medicine Object
-    // -------------------------------------------------------------
-
     public class TransactionObject extends DefaultListObject {
 
         public String transactionDescription;
@@ -133,15 +118,7 @@ public class RecentTransactionCardRow extends CardWithList {
                     Toast.makeText(getContext(), "Click on " + getObjectId(), Toast.LENGTH_SHORT).show();
                 }
             });
-
-//            setOnItemSwipeListener(new OnItemSwipeListener() {
-//                @Override
-//                public void onItemSwipe(ListObject object, boolean dismissRight) {
-//                    Toast.makeText(getContext(), "Swipe on " + object.getObjectId(), Toast.LENGTH_SHORT).show();
-//                }
-//            });
         }
-
     }
 
 

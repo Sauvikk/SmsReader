@@ -2,14 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.souvik.pfmUi">
 
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:name=".PFM"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
         <activity
-            android:name="com.example.souvik.pfmUi.SplashScreensActivity"
+            android:name=".Activities.SplashScreensActivity"
             android:label="@string/app_name"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
@@ -19,9 +23,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />
-        <activity android:name=".WizardActivity" />
-        <activity android:name=".AddTransactionActivity" />
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.WizardActivity" />
+        <activity android:name=".Activities.AddTransactionActivity" />
+
+        <receiver
+            android:name=".IncomingSmsReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

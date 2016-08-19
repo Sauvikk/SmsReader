@@ -1,21 +1,17 @@
-package com.example.souvik.pfmUi;
+package com.example.souvik.pfmUi.Activities;
 
 import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.NumberPicker;
 
+import com.example.souvik.pfmUi.R;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -76,7 +72,7 @@ public class AddTransactionActivity extends AppCompatActivity implements
         accountEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final CharSequence accounts[] = new CharSequence[] {"Cash", "xxxx5536 (HDFC)", "xxxx2287 (Axis)"};
+                final CharSequence accounts[] = new CharSequence[]{"Cash", "xxxx5536 (HDFC)", "xxxx2287 (Axis)"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(AddTransactionActivity.this);
                 builder.setTitle("Select an account");
                 builder.setItems(accounts, new DialogInterface.OnClickListener() {
@@ -95,7 +91,7 @@ public class AddTransactionActivity extends AppCompatActivity implements
         paymentTypeEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final CharSequence type[] = new CharSequence[] {"Debit", "Credit"};
+                final CharSequence type[] = new CharSequence[]{"Debit", "Credit"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(AddTransactionActivity.this);
                 builder.setTitle("Payment Type");
                 builder.setItems(type, new DialogInterface.OnClickListener() {
@@ -119,7 +115,7 @@ public class AddTransactionActivity extends AppCompatActivity implements
         paymentTypeEditText = (MaterialEditText) findViewById(R.id.add_transaction_form_payment_type);
 
         // collapsingToolbar values
-        collapsingToolbarLayout.setTitle("RICK");
+        collapsingToolbarLayout.setTitle("Add Transaction");
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.transparent)); // transperent color = #00000000
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.rgb(255, 255, 255));
 
@@ -137,4 +133,7 @@ public class AddTransactionActivity extends AppCompatActivity implements
             dateEditText.setText(dayOfMonth+"/"+monthOfYear+"/"+year);
         }
     }
+
+
+
 }
